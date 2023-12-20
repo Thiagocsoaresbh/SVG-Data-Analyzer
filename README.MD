@@ -28,6 +28,7 @@ ou copie o código:
 </head>
 <body>
 
+<h1>SVG Data Analyzer</h1>
 <!-- Use uma div para inserir o SVG dinamicamente -->
 <div id="meu-svg-container"></div>
 
@@ -70,6 +71,7 @@ ou copie o código:
 
 </body>
 </html>
+
 
 ```
 
