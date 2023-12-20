@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obter Dados SVG</title>
+</head>
+<body>
+
+<h1>SVG Data Analyzer</h1>
+<!-- Use uma div para inserir o SVG dinamicamente -->
+<div id="meu-svg-container"></div>
+
+<script>
+    // URL do arquivo SVG
+    const svgUrl = 'logot01.svg';
+
+    // Fetch para obter o conteúdo do SVG
+    fetch(svgUrl)
+        .then(response => response.text())
+        .then(svgContent => {
+            // Inserir o conteúdo do SVG na div
+            document.getElementById('meu-svg-container').innerHTML = svgContent;
+
+            // Agora você pode acessar o documento do SVG dentro da div
+            const svgDocument = document.getElementById('meu-svg-container').querySelector('svg');
+
+            // Obter atributos do SVG
+            const width = svgDocument.getAttribute('width');
+            const height = svgDocument.getAttribute('height');
+            const version = svgDocument.getAttribute('version');
+            const viewBox = svgDocument.getAttribute('viewBox');
+            const xmlns = svgDocument.getAttribute('xmlns');
+
+            console.log('Width:', width);
+            console.log('Height:', height);
+            console.log('Version:', version);
+            console.log('ViewBox:', viewBox);
+            console.log('XMLNS:', xmlns);
+
+            // Exemplo: Obter dados específicos do caminho (path) dentro do SVG
+            const pathElement = svgDocument.querySelector('path');
+            if (pathElement) {
+                const pathData = pathElement.getAttribute('d');
+                console.log('Path Data:', pathData);
+            }
+        })
+        .catch(error => console.error('Erro ao carregar o SVG:', error));
+</script>
+
+</body>
+</html>

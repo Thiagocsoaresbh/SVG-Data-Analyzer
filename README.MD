@@ -1,0 +1,90 @@
+# SVG Analyzer
+
+Este script em JavaScript permite obter informações específicas de um arquivo SVG e incorporá-lo dinamicamente em uma página web. Ele pode ser útil para desenvolvedores web, controle de qualidade de SVGs, análise de SVGs existentes, educação, testes automatizados e integração contínua.
+
+## Funcionalidades
+
+- Obtém dimensões (largura, altura) e outros atributos de um arquivo SVG.
+- Pode ser incorporado em scripts de teste automatizado para verificar a formatação correta de SVGs.
+- Utiliza a API Fetch para carregar dinamicamente o conteúdo SVG.
+
+## Como Rodar
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+	```
+
+ou copie o código:
+
+```markdown
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obter Dados SVG</title>
+</head>
+<body>
+
+<!-- Use uma div para inserir o SVG dinamicamente -->
+<div id="meu-svg-container"></div>
+
+<script>
+    // URL do arquivo SVG
+    const svgUrl = 'logot01.svg';
+
+    // Fetch para obter o conteúdo do SVG
+    fetch(svgUrl)
+        .then(response => response.text())
+        .then(svgContent => {
+            // Inserir o conteúdo do SVG na div
+            document.getElementById('meu-svg-container').innerHTML = svgContent;
+
+            // Agora você pode acessar o documento do SVG dentro da div
+            const svgDocument = document.getElementById('meu-svg-container').querySelector('svg');
+
+            // Obter atributos do SVG
+            const width = svgDocument.getAttribute('width');
+            const height = svgDocument.getAttribute('height');
+            const version = svgDocument.getAttribute('version');
+            const viewBox = svgDocument.getAttribute('viewBox');
+            const xmlns = svgDocument.getAttribute('xmlns');
+
+            console.log('Width:', width);
+            console.log('Height:', height);
+            console.log('Version:', version);
+            console.log('ViewBox:', viewBox);
+            console.log('XMLNS:', xmlns);
+
+            // Exemplo: Obter dados específicos do caminho (path) dentro do SVG
+            const pathElement = svgDocument.querySelector('path');
+            if (pathElement) {
+                const pathData = pathElement.getAttribute('d');
+                console.log('Path Data:', pathData);
+            }
+        })
+        .catch(error => console.error('Erro ao carregar o SVG:', error));
+</script>
+
+</body>
+</html>
+
+```
+
+Subistitua em const svgUrl = 'logot01.svg';
+logot01.svg pelo nome do seu arquivo na raiz do projeto onde está seu index.html
+
+Rode seu servidor web e execute o arquivo
+
+## Licença
+
+Este projeto é licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT){:target="_blank"}.
+[![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg)](LICENSE)
+
+
+###Autor###
+**Thiago C Soares**
+Desenvolvedor Full Stack
+LinkedIn: [LinkedIn](https://linkedin.com/in/thiago-csoares){:target="_blank"}
