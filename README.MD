@@ -75,8 +75,9 @@ ou copie o código:
 
 ```
 
-Subistitua em const svgUrl = 'imagem-exemplo.svg';
-imagem-exemplo.svg pelo nome do seu arquivo na raiz do projeto onde está seu index.html
+Subistitua em const svgUrl = 'imagem-exemplo.svg'
+
+O nome 'imagem-exemplo.svg' pelo nome do seu arquivo na raiz do projeto onde está seu index.html
 
 Rode seu servidor web e execute o arquivo
 
@@ -85,10 +86,7 @@ Rode seu servidor web e execute o arquivo
 Este projeto é licenciado
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg)](LICENSE)
 
-
-###Autor###
+### Autor
 **Thiago C Soares**
-
 Desenvolvedor Full Stack
-
 LinkedIn: [LinkedIn](https://linkedin.com/in/thiago-csoares){:target="_blank"}
