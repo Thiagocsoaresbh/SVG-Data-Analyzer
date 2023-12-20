@@ -34,7 +34,7 @@ ou copie o código:
 
 <script>
     // URL do arquivo SVG
-    const svgUrl = 'logot01.svg';
+    const svgUrl = 'imagem-exemplo.svg';
 
     // Fetch para obter o conteúdo do SVG
     fetch(svgUrl)
@@ -75,18 +75,20 @@ ou copie o código:
 
 ```
 
-Subistitua em const svgUrl = 'logot01.svg';
-logot01.svg pelo nome do seu arquivo na raiz do projeto onde está seu index.html
+Subistitua em const svgUrl = 'imagem-exemplo.svg';
+imagem-exemplo.svg pelo nome do seu arquivo na raiz do projeto onde está seu index.html
 
 Rode seu servidor web e execute o arquivo
 
 ## Licença
 
-Este projeto é licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT){:target="_blank"}.
+Este projeto é licenciado
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg)](LICENSE)
 
 
 ###Autor###
 **Thiago C Soares**
+
 Desenvolvedor Full Stack
+
 LinkedIn: [LinkedIn](https://linkedin.com/in/thiago-csoares){:target="_blank"}
